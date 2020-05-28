@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
+/* Making sure the Application element knows to use the boundaries of the screen, which equal 100% of the height and width.  */
+.application {
+  height: 100vh;
+  width: 100vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Determining a fixed height for the Finder element, which could use the full with of the parent element. */
+/* To ensure the Finder element is not directly attached to the top, a margin had been put into place.  */
+/* The child element will be placed in the horizontally in the middle by using flexbox and its justify-contact property. */
+.finder {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 38px;
+  margin-top: 48px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+/* The Finder Wrapper element will be the same height as the parent element, though only using 78% of its width. */
+/* The child element will be placed in the center because of flexbox as both the align-items, as well justify-content property is set to center. */
+/* Padding has been used to ensure the child's element height and width could be set to 100% while not touching the borders of this element. */
+.finder-wrapper {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding: 16px;
+  width: 78%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* As mentioned above, height and width are set to 100%, which will use the full space of the parent element, which is limited by the padding set on the parent element.  */
+/* The font-size has been set the fourteen, so this is balanced better with the larger input field. */
+/* Padding has been used to ensure the typed text is not directly starting from the borders of the input field. */
+.finder__input {
+  font-size: 14px;
+  height: 100%;
+  padding: 6px 8px;
+  width: 100%;
+}
+
+/* Hiding the svg icon from the view, so only one of the icons to delete the input is remaining. */
+button > svg {
+  display: none;
 }
